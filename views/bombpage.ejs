@@ -1,0 +1,53 @@
+
+<script>
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+           
+di = document.querySelector('#boom');
+di.textContent ="boommm";
+        }
+    }, 1000);
+
+}
+
+window.onload = function () {
+    var fiveMinutes = <%=countdown%>,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+</script>
+ <div id="boom">Bomb will be blast in  <span id="time"><%=countdown%></span> minutes!</div>
+
+<br>
+<br>
+<br>
+<br>
+##############################FOR SOLIDER ONLY##############################
+
+<script>
+function print(){
+            
+di = document.querySelector('#boom');
+di.textContent ="bomb defused";
+
+};
+</script><br>
+<br>
+<br>
+<p id="demo">Number of prime before <%=count%> is <%=result%> </p>
+
+<button onclick="print()">defuse bomb </button>
+<br>
+<br>
+<a href="/logout">logout</a> 
