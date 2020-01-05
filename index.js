@@ -51,7 +51,7 @@ app.get('/terrorist',(req,res) => {
 });
 
 app.post('/solider', function(req, res){
-if((req.body.username==="solider@thetarzanway.com") && (req.body.password==="solider"))
+if((req.body.username==="soldier@thetarzanway.com") && (req.body.password==="soldier"))
 { 
 currentUser="S";
 console.log(currentUser);
