@@ -27,6 +27,9 @@ di = document.querySelector('#boom');
 di.textContent ="boommm";
 var img = document.getElementById("image");
 img.src="https://i2.wp.com/metro.co.uk/wp-content/uploads/2018/04/sei_5806423.jpg?quality=90&strip=all&zoom=1&resize=644%2C425&ssl=1";
+l = document.querySelector('#Button');
+l.disabled=true;
+
 return false;
 
         }
@@ -53,6 +56,7 @@ window.onload = function () {
 <br>
 <br>
 <br>
+
 <div class="container-fluid"> 
 		<header class="jumbotron">
 			<div class="container"> 
@@ -72,23 +76,31 @@ return false;
 
 };
 </script>
+
+<% if (currentUser==="S")  { %>
+
+
 <br>
 <br>
 <p id="demo">Number of prime before <%=count%> is <%=result%> </p>
 
-<button onclick="print()">defuse bomb </button>
+<button onclick="print()" id="Button">defuse bomb </button>
 <br>
 <br>
 </div>
 		</header>
 </div>
 <div  >
+
+</div>
+<%} else { %>
+<p>  </p>
+<% } %>
 <div class="container-fluid"> 
 		<header class="jumbotron">
 			<div class="container"> 
 <img id="image" src="https://images-eu.ssl-images-amazon.com/images/I/61V2cX4JqGL.png"></div></div>
 		</header>
-</div>
 </div>
 <a href="/logout">logout</a> 
 </body>
