@@ -111,7 +111,7 @@ var isPrime = function(n) {
           
         } }
 console.log(result);
-res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,result:result});
+res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,result:result,currentUser:currentUser});
     var timer = countdown;
     setInterval(function () {
 
@@ -156,7 +156,7 @@ var isPrime = function(n) {
         }
     }
 console.log(result);
-res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,result:result});
+res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,result:result,currentUser:currentUser});
    var timer = countdown;
     setInterval(function () {
 
