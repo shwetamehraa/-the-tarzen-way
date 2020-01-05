@@ -70,7 +70,20 @@ app.post('/terrorist', function(req, res){
 if((req.body.username=="terrorist@thetarzanway.com") && (req.body.password=="terrorist"))
 { currentUser="T";
 console.log(currentUser);
+if(countdown==0){
 res.redirect("/terroristinput");
+}else
+{res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,currentUser:currentUser});
+var timer = countdown;
+    setInterval(function () {
+
+        if (--timer < 0) {
+           countdown=0;
+        }
+countdown=--timer;
+    }, 1000);
+
+}
 }
 else
 {res.redirect("/");
@@ -81,46 +94,17 @@ else
 app.post('/terroristinput',isLoggedIn, function(req, res){
 countdown=req.body.countd;
 count=req.body.countd;
-var isPrime = function(n) {
-    var result = true;
-    
-    if (n <= 1) {
-        result = false;
-    }
-    else {
-        // We only need to check up to the sqrt of the number.
-        for (var i=2; i*i<=n; i++) {
-            if (n % i === 0) {
-                // This number is evenly divisible by i, so it is not prime.
-                result = false;
-                break;
-            }
-        }
-    }
-    
-    return result;
-}
 
-
-
-    var result = 0;
-    
-    for (var i=0; i<count; i++) {
-        if (isPrime(i)) {
-            result++;
-          
-        } }
-console.log(result);
-res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,result:result,currentUser:currentUser});
+res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,currentUser:currentUser});
     var timer = countdown;
     setInterval(function () {
 
         if (--timer < 0) {
            countdown=0;
+return;
         }
 countdown=--timer;
     }, 1000);
-
 
 }
 );
@@ -162,6 +146,7 @@ res.render("bombpage",{countdown:countdown,currentUser:currentUser,count:count,r
 
         if (--timer < 0) {
            countdown=0;
+         return;
         }
 countdown=--timer;
     }, 1000);
